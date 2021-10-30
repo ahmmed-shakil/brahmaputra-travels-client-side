@@ -1,0 +1,25 @@
+.carousel-caption{
+    top: 60%;
+    transform: translateY(-50%);
+}
+.carousel img{
+    height: 100%;
+    object-fit: cover;
+}
+.carousel h1{
+    font-size: 70px;
+}
+.carousel p{
+    font-size: 25px;
+}
+.carousel-item{
+    height: 100vh;
+}
+.btn-regular{
+    background-color: #061A3A;
+    border: none;
+    transition: all 0.5s ease-in-out;
+}
+.btn-regular:hover{
+    background-color: #FF7C5B;
+}

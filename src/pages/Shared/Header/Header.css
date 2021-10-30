@@ -1,0 +1,29 @@
+.nav-bg{
+    background-color: #061A3A;
+}
+.nav-items{
+    font-size: 1rem;   
+}
+.text-color{
+    color: #FF7C5B;
+}
+.nav-item{
+    text-decoration: none;
+    color: whitesmoke;
+    padding: 5px 0px;
+    margin-left: 15px;
+    border-bottom: 3px solid transparent;
+    font-weight: 600;
+}
+
+.nav-item:hover , .nav-item.active {
+    border-bottom: 3px solid #FF7C5B;
+    color: #FF7C5B;
+}
+.btn-styled{
+    background-color: #FF7C5B;
+    border: 0px;
+}
+.btn-styled:hover{
+    background-color: white;
+}
