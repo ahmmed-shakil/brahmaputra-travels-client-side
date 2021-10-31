@@ -1,18 +1,19 @@
 import React from 'react';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { useState, useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import { Container, Row, Col, Form } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
 
 const PlaceOrder = (props) => {
+    const history = useHistory();
     const { user } = useAuth();
     const { id } = useParams();
     const [tour, setTour] = useState({});
     const { register, handleSubmit, reset } = useForm();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/tours/${id}`)
+        fetch(`https://frightful-moonlight-78776.herokuapp.com/tours/${id}`)
             .then(res => res.json())
             .then(data => setTour(data))
     }, [])
@@ -22,9 +23,10 @@ const PlaceOrder = (props) => {
         data.orderedItem = {
             id: tour._id,
             title: tour.title,
-            price: tour.price
+            price: tour.price,
+            img: tour.img
         };
-        fetch('http://localhost:5000/orders', {
+        fetch('https://frightful-moonlight-78776.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -36,11 +38,12 @@ const PlaceOrder = (props) => {
                 if (result.insertedId) {
                     alert('Order processed successfully!')
                     reset();
+                    history.push('/home');
                 }
             })
     };
     return (
-        <div className='pt-5'>
+        <div className='py-5'>
             <Container>
                 <Row>
                     <Col lg={6} sm={12} className='card p-2 shadow'>
@@ -60,6 +63,7 @@ const PlaceOrder = (props) => {
 
                     </Col>
                     <Col lg={6} sm={12} className='fw-bold text-start'>
+                        <h4>FILL UP THE FORM TO PROCEED</h4>
                         <form onSubmit={handleSubmit(onSubmit)} className='w-100'>
                             <Form.Group as={Col} controlId="formGridName" className='mb-3'>
                                 <Form.Control {...register("name")} defaultValue={user.displayName} type="text" placeholder="Enter Name" />

@@ -10,8 +10,8 @@ const Header = () => {
         <div className='mb-5'>
             <Navbar collapseOnSelect expand="lg" className='p-2 nav-bg' fixed="top">
                 <Container>
-                    <Navbar.Brand className='fs-3 fw-bolder'>
-                        <span className='text-color'><span className='text-white'>BrahmaPutra</span>Travels</span>
+                    <Navbar.Brand className='fs-4 fw-bolder'>
+                        <span className='text-color'><span className='text-white'><i className="fas fa-paper-plane"></i> BrahmaPutra</span>Travels</span>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
@@ -22,15 +22,15 @@ const Header = () => {
                             <NavLink className='nav-item' to="/contact">Contact</NavLink>
                             {
                                 !user.email ? <span>
-                                    <Button className='btn-styled ms-3 my-3 btn-sm text-uppercase'><NavLink className='text-dark text-decoration-none fw-bold' to="/login">Sign In</NavLink></Button>
+                                    <Button className='btn-styled ms-3 my-3 btn-sm'><NavLink className='text-dark text-decoration-none fw-bold' to="/login">Sign In</NavLink></Button>
                                 </span>
                                     :
-                                    <span>
+                                    <>
                                         <NavLink className='nav-item' to="/myorders">My Orders</NavLink>
                                         <NavLink className='nav-item' to="/manage">Manage Orders</NavLink>
                                         <NavLink className='nav-item' to="/add">Add New Service</NavLink>
-                                        <Button onClick={logOut} className='btn-styled mx-2 my-3 btn-sm text-uppercase'><NavLink className='text-dark text-decoration-none fw-bold' to="/home">Log Out</NavLink></Button>
-                                    </span>
+                                        <Button onClick={logOut} className='btn-styled mx-2 my-3 btn-sm'><NavLink className='text-dark text-decoration-none fw-bold' to="/home">Log Out</NavLink></Button>
+                                    </>
                             }
                         </Nav>
                         <Nav>

@@ -6,7 +6,7 @@ import './AddNewService.css'
 const AddNewService = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        axios.post('http://localhost:5000/tours', data)
+        axios.post('https://frightful-moonlight-78776.herokuapp.com/tours', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Added New Tour successfully');

@@ -9,8 +9,6 @@ import Header from './pages/Shared/Header/Header';
 import Home from './pages/Home/Home/Home';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
-import MyOrders from './pages/MyOrders/MyOrders';
-import ManageOrders from './pages/ManageOrders/ManageOrders';
 import SignIn from './pages/SignIn/SignIn';
 import NotFound from './pages/NotFound/NotFound';
 import Footer from './pages/Shared/Footer/Footer';
@@ -19,6 +17,8 @@ import Tours from './pages/Tours/Tours/Tours';
 import AuthProvider from './context/AuthProvider';
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
+import MyOrders from './pages/MyOrders/MyOrders/MyOrders';
+import ManageOrders from './pages/ManageOrders/ManageOrders/ManageOrders';
 
 
 function App() {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import './SignIn.css'
 
 const SignIn = () => {
     const { handleGoogleSignIn, setIsLoading } = useAuth();
@@ -16,7 +17,7 @@ const SignIn = () => {
     }
 
     return (
-        <div className='pt-5'>
+        <div className='py-5 mb-5'>
             <div className="d-flex align-items-center justify-content-center" style={{ height: '70vh' }}>
                 <div>
                     <div className="mt-4 text-center">
@@ -26,9 +27,9 @@ const SignIn = () => {
                         <div className="d-flex justify-content-around align-items-center mb-5 p-0 pe-2">
 
                             <div className="p-5">
-                                <h4 className="mt-5 mb-3">Login With</h4>
-                                <div className="d-flex justify-content-around align-items-center mb-5 p-0 pe-2 btn-login">
-                                    <div className="m-0 me-2" onClick={signInUsingGoogle} >
+                                <h4 className="mb-3">Login With</h4>
+                                <div onClick={signInUsingGoogle} className="login d-flex justify-content-around align-items-center mb-5 p-2 rounded pe-2 btn-login shadow border-1">
+                                    <div className="m-0 me-2" >
                                         <img src="https://i.ibb.co/RywzMBF/7123025-logo-google-g-icon.png" className="img-fluid" alt="" />
                                     </div>
                                     <h6 className="p-0 m-0" >Continue With Google</h6>

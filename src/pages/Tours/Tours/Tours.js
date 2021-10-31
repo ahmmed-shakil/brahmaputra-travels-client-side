@@ -6,7 +6,7 @@ import SingleTour from '../SingleTour/SingleTour';
 const Tours = () => {
     const [tours, setTours] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/tours')
+        fetch('https://frightful-moonlight-78776.herokuapp.com/tours')
             .then(res => res.json())
             .then(data => setTours(data))
     }, [])
